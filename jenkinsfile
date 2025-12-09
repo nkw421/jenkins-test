@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+    stages {
+        stage('Check Node') {
+            steps {
+                sh 'hostname && whoami'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'echo "Hello Jenkins on Kubernetes!"'
+            }
+        }
+    }
+}
